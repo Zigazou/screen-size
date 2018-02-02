@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Screen size calculator</title>
+    <link href="screen-size.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <form class="screen-size js-screen-size">
+      <!-- Screen ratio -->
+      <div class="screen-ratio">
+        <select class="js-ratio">
+          <option value="5-4">
+            5/4: 1280×1024, 720×576
+          </option>
+          <option value="4-3">
+            4/3: 2048×1536, 1600×1200, 1024×768, 800×600, 640×480, 320×240
+          </option>
+          <option value="16-10">
+            16/10: 1920×1200, 1680×1050, 1280×800, 640×400, 320×200
+          </option>
+          <option value="16-9" selected="selected">
+            16/9: 3840×2160, 1920×1080, 1600×900, 1280×720, 1024×576, 512×288
+          </option>
+          <option value="21-9">
+            21/9: 2560×1080, 3440×1440
+          </option>
+        </select>
+      </div>
+
+      <!-- Units -->
+      <div class="screen-unit">
+        <select class="js-screen-unit">
+          <option value="in" selected="selected">in</option>
+          <option value="cm">cm</option>
+        </select>
+      </div>
+
+      <!-- Diagonal -->
+      <div class="screen-diagonal">
+        <div class="screen-preview js-screen-preview">
+          <img src="screen-4-3.svg" class="js-4-3 screen-disabled">
+          <img src="screen-5-4.svg" class="js-5-4 screen-disabled">
+          <img src="screen-16-10.svg" class="js-16-10 screen-disabled">
+          <img src="screen-16-9.svg" class="js-16-9">
+          <img src="screen-21-9.svg" class="js-21-9 screen-disabled">
+        </div>
+        <input class="js-diagonal" type="text" size="4" value="0">
+      </div>
+
+      <!-- Width -->
+      <div class="screen-width">
+        <input class="js-width" type="text" value="0">
+      </div>
+
+      <!-- Height -->
+      <div class="screen-height">
+        <input class="js-height" type="text" value="0">
+      </div>
+    </form>
+
+    <script src="screen-size.js"></script>
+  </body>
+</html>

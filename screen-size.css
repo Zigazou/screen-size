@@ -1,0 +1,85 @@
+body { background-color: #444; }
+.screen-disabled { display: none; }
+
+.screen-size {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr 1fr minmax(auto, 100%);
+  grid-template-columns: minmax(auto, 100%) 1fr;
+  grid-template-areas:
+    "r c"
+    "w ."
+    "d h";
+}
+
+.screen-unit { grid-area: c; }
+.screen-unit select { width: 100%; }
+
+.screen-ratio { grid-area: r; }
+.screen-ratio select { width: 100%; }
+
+.screen-diagonal {
+  position: relative;
+  display: grid;
+  grid-area: d;
+}
+
+.screen-diagonal img {
+  align-self: center;
+  justify-self: center;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.screen-height {
+  grid-area: h;
+  align-self: center;
+}
+
+.screen-width {
+  display: grid;
+  grid-area: w;
+  justify-self: center;
+}
+
+/* Input widgets */
+.screen-size input {
+  font-size: 1rem;
+  text-align: center;
+  width: 3rem;
+}
+
+.screen-height input { text-align: left; }
+.screen-size select { text-align: center; }
+
+.screen-size input {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
+.screen-size input:focus {
+  background-color: white;
+  color: #444;
+}
+
+.screen-diagonal input {
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+}
+
+@media (orientation: landscape) {
+  .screen-size {
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 10px 10px #333;
+    padding: 2em 3em;
+  }
+
+  .screen-size input {
+    font-size: 2rem;
+    width: 6rem;
+  }
+}
